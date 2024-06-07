@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace WinFormsApp1
 {
@@ -46,23 +47,79 @@ namespace WinFormsApp1
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if (textBoxEmail.Text == "")
+            string Email = textBoxEmail.Text;
+            string Password = textBoxPassword.Text;
+
+            if (string.IsNullOrWhiteSpace(textBoxEmail.Text))
             {
                 MessageBox.Show("Please enter your email address");
                 textBoxEmail.Focus();
             }
-            else if (textBoxPassword.Text =="")
+            else if (string.IsNullOrWhiteSpace(textBoxPassword.Text))
             {
                 MessageBox.Show("Please enter your password");
                 textBoxPassword.Focus();
             }
             else
             {
+                ValidateUser(Email, Password);
+                //var HomePage = new Home();
+                //HomePage.Show();
+                //this.Close();
+                //Exit = false;
+            }
+        }
+        private void ValidateUser(string Email, string Password)
+        {
+            var context = new MusicDBContext();
+
+            var validate = from e in context.Users
+                        where e.Email == Email && e.Password == Password
+                        select e;
+
+            if (validate.Count() != 0)
+            {
                 var HomePage = new Home();
                 HomePage.Show();
                 this.Close();
-                //Exit = false;
             }
+            else
+            {
+                MessageBox.Show("Email or Password is invalid. Please try again.");
+                textBoxEmail.Clear();
+                textBoxPassword.Clear();
+                textBoxEmail.Focus();
+            }
+            //using (var context = new MusicDBContext())
+            //{
+            //    var email = context.Users
+            //        .Where(e => Email.Contains(Email))
+            //        .ToList();
+            //    if (email.Any())
+            //    {
+            //        var HomePage = new Home();
+            //        HomePage.Show();
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("There is no account associated with that email. Please try again or register a new account.");
+            //    }
+
+            //    var password = context.Users
+            //        .Where(u => Password.PContains(Password))
+            //        .ToList();
+            //    if (password.Any())
+            //    {
+            //        var HomePage = new Home();
+            //        HomePage.Show();
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Password is incorrect. Please try again.");
+            //    }
+            //}
         }
     }
 }

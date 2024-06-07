@@ -105,7 +105,6 @@
             textBoxFirstName.Name = "textBoxFirstName";
             textBoxFirstName.Size = new Size(216, 27);
             textBoxFirstName.TabIndex = 7;
-            textBoxFirstName.TextChanged += textBoxFirstName_TextChanged;
             // 
             // labelCaptcha
             // 
@@ -160,7 +159,6 @@
             checkBoxPolicy.TabIndex = 17;
             checkBoxPolicy.Text = "I agree to the privacy policy";
             checkBoxPolicy.UseVisualStyleBackColor = true;
-            checkBoxPolicy.CheckedChanged += checkBoxPolicy_CheckedChanged;
             // 
             // buttonCreateAcc
             // 
@@ -196,7 +194,6 @@
             textBoxLastName.Name = "textBoxLastName";
             textBoxLastName.Size = new Size(225, 27);
             textBoxLastName.TabIndex = 20;
-            textBoxLastName.TextChanged += textBoxLastName_TextChanged;
             // 
             // textBoxEmail
             // 
@@ -208,7 +205,6 @@
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(537, 27);
             textBoxEmail.TabIndex = 21;
-            textBoxEmail.TextChanged += textBoxEmail_TextChanged;
             // 
             // textBoxPassword
             // 
@@ -221,7 +217,6 @@
             textBoxPassword.Size = new Size(537, 27);
             textBoxPassword.TabIndex = 22;
             textBoxPassword.UseSystemPasswordChar = true;
-            textBoxPassword.TextChanged += textBoxPassword_TextChanged;
             // 
             // textBoxCaptcha
             // 
@@ -233,7 +228,6 @@
             textBoxCaptcha.Name = "textBoxCaptcha";
             textBoxCaptcha.Size = new Size(357, 27);
             textBoxCaptcha.TabIndex = 23;
-            textBoxCaptcha.TextChanged += textBoxCaptcha_TextChanged;
             // 
             // pictureBoxLogo
             // 
@@ -303,7 +297,6 @@
             Controls.Add(labelLogo);
             Name = "Register";
             Text = "Register";
-            FormClosing += Register_FormClosing;
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Migrations.Operations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,11 @@ namespace WinFormsApp1
         //this section includes empty validations//
         private void buttonCreateAcc_Click(object sender, EventArgs e)
         {
+            string FN = textBoxFirstName.Text;
+            string LN = textBoxLastName.Text;
+            string Email = textBoxEmail.Text;
+            string Password = textBoxPassword.Text;
+
             if (string.IsNullOrWhiteSpace(textBoxFirstName.Text))
             {
                 MessageBox.Show("Please enter a First Name.");
@@ -65,39 +71,27 @@ namespace WinFormsApp1
             }
             else
             {
+                AddUser(FN,LN,Email,Password);
                 MessageBox.Show("Your account has been created!\n Please log in using your credentials.");
                 var Login = new Login();
                 Login.Show();
                 this.Close();
             }
         }
-        private void textBoxFirstName_TextChanged(object sender, EventArgs e)
+
+        private void AddUser(string FN, string LN, string Email, string Password)
         {
+            using (var context = new MusicDBContext())
+            {
+                var u = new User();
+                u.First_Name = FN;
+                u.Last_Name = LN;
+                u.Email = Email;
+                u.Password = Password;
 
-
-        }
-        private void textBoxLastName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void textBoxEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void Register_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
-
-        private void checkBoxPolicy_CheckedChanged(object sender, EventArgs e)
-        {
-
+                context.Users.Add(u);
+                context.SaveChanges();
+            }
         }
         private void generateCaptcha()
         {
@@ -124,16 +118,10 @@ namespace WinFormsApp1
             labelCaptchaBox.Text = captcha;
         }
 
-        private void textBoxCaptcha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonNewCaptcha_Click(object sender, EventArgs e)
         {
             generateCaptcha();
         }
-
-
     }
 }
