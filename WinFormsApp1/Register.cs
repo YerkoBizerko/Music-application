@@ -32,10 +32,12 @@ namespace WinFormsApp1
         //this section includes empty validations//
         private void buttonCreateAcc_Click(object sender, EventArgs e)
         {
+
             string FN = textBoxFirstName.Text;
             string LN = textBoxLastName.Text;
             string Email = textBoxEmail.Text;
             string Password = textBoxPassword.Text;
+
 
             if (string.IsNullOrWhiteSpace(textBoxFirstName.Text))
             {
@@ -71,28 +73,66 @@ namespace WinFormsApp1
             }
             else
             {
-                AddUser(FN,LN,Email,Password);
-                MessageBox.Show("Your account has been created!\n Please log in using your credentials.");
-                var Login = new Login();
-                Login.Show();
-                this.Close();
+                //validation that new email is not already registered to an account. Will add new user if not in database//
+                using (var context = new MusicDBContext())
+                {
+                    var u = new User();
+                    u.First_Name = FN;
+                    u.Last_Name = LN;
+                    u.Email = Email;
+                    u.Password = Password;
+
+                    var existingRecord = context.Users.FirstOrDefault(u => u.Email == Email);
+                    if (existingRecord != null)
+                    {
+                        MessageBox.Show("This Email is already registered. Please use a different email or click Forgot password");
+                        textBoxEmail.Focus();
+                    }
+                    else
+                    {
+                        context.Users.Add(u);
+                        context.SaveChanges();
+                        MessageBox.Show("Your account has been created!\n Please log in using your credentials.");
+                        var Login = new Login();
+                        Login.Show();
+                        this.Close();
+                    }
+                }
+                //This is the old method of adding a new user. un-comment to re-enable and comment out the above code.//
+
+                //AddUser(FN,LN,Email,Password);
+                //MessageBox.Show("Your account has been created!\n Please log in using your credentials.");
+                //var Login = new Login();
+                //Login.Show();
+                //this.Close();
+  
             }
         }
 
-        private void AddUser(string FN, string LN, string Email, string Password)
-        {
-            using (var context = new MusicDBContext())
-            {
-                var u = new User();
-                u.First_Name = FN;
-                u.Last_Name = LN;
-                u.Email = Email;
-                u.Password = Password;
+        //private void AddUser(string FN, string LN, string Email, string Password) THIS IS THE METHOD OUTLINED ABOVE. UN-COMMENT TO UTILIZE//
+        //{
+        //    using (var context = new MusicDBContext())
+        //    {
+        //        var u = new User();
+        //        u.First_Name = FN;
+        //        u.Last_Name = LN;
+        //        u.Email = Email;
+        //        u.Password = Password;
 
-                context.Users.Add(u);
-                context.SaveChanges();
-            }
-        }
+        //        var existingRecord = context.Users.FirstOrDefault(u => u.Email == Email);
+        //        if (existingRecord != null)
+        //        {
+        //            MessageBox.Show("This Email is already registered. Please use a different email or click Forgot password");
+        //            textBoxEmail.Focus();
+        //        }
+        //        //if (context.Users.Any(u => u.Email == User.Email))
+        //        else
+        //        {
+        //            context.Users.Add(u);
+        //            context.SaveChanges();
+        //        }
+        //    }
+        //}
         private void generateCaptcha()
         {
             Random random = new Random();
