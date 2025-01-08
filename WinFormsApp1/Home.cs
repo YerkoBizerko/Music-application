@@ -1,3 +1,5 @@
+using System.Media;
+
 namespace WinFormsApp1
 {
     public partial class Home : Form
@@ -5,6 +7,7 @@ namespace WinFormsApp1
         public Home()
         {
             InitializeComponent();
+            VolumeTrackBar.Value = 50;
         }
         string[] paths, files;
 
@@ -58,6 +61,28 @@ namespace WinFormsApp1
             {
                 TrackList.SelectedIndex = TrackList.SelectedIndex - 1;
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (MediaPlayer.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                ProgressBar.Maximum = (int)MediaPlayer.Ctlcontrols.currentItem.duration;
+                ProgressBar.Value = (int)MediaPlayer.Ctlcontrols.currentPosition;
+            }
+            try
+            {
+                TrackTimer.Text = MediaPlayer.Ctlcontrols.currentPositionString;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void VolumeTrackBar_Scroll(object sender, EventArgs e)
+        {
+            MediaPlayer.settings.volume = VolumeTrackBar.Value;
         }
     }
 }

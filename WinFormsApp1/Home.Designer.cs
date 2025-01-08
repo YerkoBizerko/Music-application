@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             TrackList = new ListBox();
             UploadMusic = new Button();
@@ -36,19 +37,20 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            progressBar1 = new ProgressBar();
-            label5 = new Label();
+            ProgressBar = new ProgressBar();
+            TrackTimer = new Label();
             splitter1 = new Splitter();
-            Volume = new TrackBar();
+            VolumeTrackBar = new TrackBar();
             MediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             pictureBox1 = new PictureBox();
             PauseBtn = new Button();
             BackBtn = new Button();
             SkipBtn = new Button();
             PlayBtn = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)AlbumCover).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Volume).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)VolumeTrackBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MediaPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -130,24 +132,24 @@
             label4.TabIndex = 9;
             label4.Text = "Album Name";
             // 
-            // progressBar1
+            // ProgressBar
             // 
-            progressBar1.BackColor = SystemColors.Control;
-            progressBar1.ForeColor = SystemColors.GradientInactiveCaption;
-            progressBar1.Location = new Point(71, 434);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(199, 12);
-            progressBar1.TabIndex = 11;
+            ProgressBar.BackColor = SystemColors.Control;
+            ProgressBar.ForeColor = SystemColors.GradientInactiveCaption;
+            ProgressBar.Location = new Point(71, 434);
+            ProgressBar.Name = "ProgressBar";
+            ProgressBar.Size = new Size(199, 12);
+            ProgressBar.TabIndex = 11;
             // 
-            // label5
+            // TrackTimer
             // 
-            label5.AutoSize = true;
-            label5.ForeColor = SystemColors.ControlLightLight;
-            label5.Location = new Point(276, 433);
-            label5.Name = "label5";
-            label5.Size = new Size(34, 15);
-            label5.TabIndex = 15;
-            label5.Text = "00:00";
+            TrackTimer.AutoSize = true;
+            TrackTimer.ForeColor = SystemColors.ControlLightLight;
+            TrackTimer.Location = new Point(276, 433);
+            TrackTimer.Name = "TrackTimer";
+            TrackTimer.Size = new Size(34, 15);
+            TrackTimer.TabIndex = 15;
+            TrackTimer.Text = "00:00";
             // 
             // splitter1
             // 
@@ -157,12 +159,14 @@
             splitter1.TabIndex = 16;
             splitter1.TabStop = false;
             // 
-            // Volume
+            // VolumeTrackBar
             // 
-            Volume.Location = new Point(79, 537);
-            Volume.Name = "Volume";
-            Volume.Size = new Size(226, 45);
-            Volume.TabIndex = 17;
+            VolumeTrackBar.Location = new Point(79, 537);
+            VolumeTrackBar.Maximum = 100;
+            VolumeTrackBar.Name = "VolumeTrackBar";
+            VolumeTrackBar.Size = new Size(226, 45);
+            VolumeTrackBar.TabIndex = 17;
+            VolumeTrackBar.Scroll += VolumeTrackBar_Scroll;
             // 
             // MediaPlayer
             // 
@@ -233,6 +237,11 @@
             PlayBtn.UseVisualStyleBackColor = true;
             PlayBtn.Click += PlayBtn_Click;
             // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -244,10 +253,10 @@
             Controls.Add(BackBtn);
             Controls.Add(PauseBtn);
             Controls.Add(pictureBox1);
-            Controls.Add(Volume);
+            Controls.Add(VolumeTrackBar);
             Controls.Add(splitter1);
-            Controls.Add(label5);
-            Controls.Add(progressBar1);
+            Controls.Add(TrackTimer);
+            Controls.Add(ProgressBar);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -262,7 +271,7 @@
             FormClosing += Home_FormClosing;
             ((System.ComponentModel.ISupportInitialize)AlbumCover).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Volume).EndInit();
+            ((System.ComponentModel.ISupportInitialize)VolumeTrackBar).EndInit();
             ((System.ComponentModel.ISupportInitialize)MediaPlayer).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -278,10 +287,10 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private ProgressBar progressBar1;
-        private Label label5;
+        private ProgressBar ProgressBar;
+        private Label TrackTimer;
         private Splitter splitter1;
-        private TrackBar Volume;
+        private TrackBar VolumeTrackBar;
         private PictureBox PlayButton;
         private AxWMPLib.AxWindowsMediaPlayer MediaPlayer;
         private PictureBox pictureBox1;
@@ -289,5 +298,6 @@
         private Button SkipBtn;
         private Button BackBtn;
         private Button PlayBtn;
+        private System.Windows.Forms.Timer timer1;
     }
 }
