@@ -58,7 +58,6 @@
             labelPWtext.Size = new Size(251, 15);
             labelPWtext.TabIndex = 1;
             labelPWtext.Text = "Please enter your email to reset your password";
-            labelPWtext.Click += label2_Click;
             // 
             // linkLabelLoginPage
             // 
@@ -82,7 +81,6 @@
             textBoxPWreset.Name = "textBoxPWreset";
             textBoxPWreset.Size = new Size(239, 29);
             textBoxPWreset.TabIndex = 3;
-            textBoxPWreset.TextChanged += textBoxPWreset_TextChanged;
             // 
             // buttonPWreset
             // 

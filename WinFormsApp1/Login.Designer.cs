@@ -62,7 +62,6 @@
             labelLogo.Size = new Size(223, 32);
             labelLogo.TabIndex = 1;
             labelLogo.Text = "Sanctuary of Sound";
-            labelLogo.Click += labelLogo_Click;
             // 
             // labelHeading
             // 

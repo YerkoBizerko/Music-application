@@ -17,16 +17,6 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxPWreset_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabelLoginPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var Login = new Login();

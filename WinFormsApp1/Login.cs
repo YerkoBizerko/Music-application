@@ -122,9 +122,5 @@ namespace WinFormsApp1
             //}
         }
 
-        private void labelLogo_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
