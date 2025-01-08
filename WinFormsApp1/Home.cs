@@ -6,25 +6,58 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+        string[] paths, files;
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void UploadMusic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Multiselect = true;
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                files = ofd.FileNames;
+                paths = ofd.FileNames;
+                for (int x = 0; x < files.Length; x++)
+                {
+                    TrackList.Items.Add(files[x]);
+                }
+            }
+        }
+
+        private void TrackList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MediaPlayer.URL = paths[TrackList.SelectedIndex];
+            MediaPlayer.Ctlcontrols.play();
+        }
+
+        private void PlayBtn_Click(object sender, EventArgs e)
+        {
+            MediaPlayer.Ctlcontrols.play();
+        }
+
+        private void PauseBtn_Click(object sender, EventArgs e)
+        {
+            MediaPlayer.Ctlcontrols.pause();
+        }
+
+        private void SkipBtn_Click(object sender, EventArgs e)
+        {
+            if (TrackList.SelectedIndex < TrackList.Items.Count - 1)
+            {
+                TrackList.SelectedIndex = TrackList.SelectedIndex + 1;
+            }
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            if (TrackList.SelectedIndex > 0)
+            {
+                TrackList.SelectedIndex = TrackList.SelectedIndex - 1;
+            }
         }
     }
 }

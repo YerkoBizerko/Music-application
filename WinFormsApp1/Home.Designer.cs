@@ -29,86 +29,73 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            listBox1 = new ListBox();
-            button1 = new Button();
-            pictureBox1 = new PictureBox();
+            TrackList = new ListBox();
+            UploadMusic = new Button();
+            AlbumCover = new PictureBox();
             pictureBox2 = new PictureBox();
-            label1 = new Label();
-            button3 = new Button();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            button2 = new Button();
             progressBar1 = new ProgressBar();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
             label5 = new Label();
             splitter1 = new Splitter();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            Volume = new TrackBar();
+            MediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+            pictureBox1 = new PictureBox();
+            PauseBtn = new Button();
+            BackBtn = new Button();
+            SkipBtn = new Button();
+            PlayBtn = new Button();
+            ((System.ComponentModel.ISupportInitialize)AlbumCover).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Volume).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MediaPlayer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // listBox1
+            // TrackList
             // 
-            listBox1.BackColor = SystemColors.GrayText;
-            listBox1.BorderStyle = BorderStyle.FixedSingle;
-            listBox1.ForeColor = SystemColors.ControlLightLight;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(355, 60);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(244, 422);
-            listBox1.TabIndex = 0;
+            TrackList.BackColor = SystemColors.GrayText;
+            TrackList.BorderStyle = BorderStyle.FixedSingle;
+            TrackList.ForeColor = SystemColors.ControlLightLight;
+            TrackList.FormattingEnabled = true;
+            TrackList.ItemHeight = 15;
+            TrackList.Location = new Point(355, 60);
+            TrackList.Name = "TrackList";
+            TrackList.Size = new Size(244, 422);
+            TrackList.TabIndex = 0;
+            TrackList.SelectedIndexChanged += TrackList_SelectedIndexChanged;
             // 
-            // button1
+            // UploadMusic
             // 
-            button1.BackColor = SystemColors.GrayText;
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(355, 502);
-            button1.Name = "button1";
-            button1.Size = new Size(244, 46);
-            button1.TabIndex = 1;
-            button1.Text = "Open Folder";
-            button1.UseVisualStyleBackColor = false;
+            UploadMusic.BackColor = SystemColors.GrayText;
+            UploadMusic.ForeColor = SystemColors.ControlLightLight;
+            UploadMusic.Location = new Point(355, 502);
+            UploadMusic.Name = "UploadMusic";
+            UploadMusic.Size = new Size(244, 46);
+            UploadMusic.TabIndex = 1;
+            UploadMusic.Text = "Upload music";
+            UploadMusic.UseVisualStyleBackColor = false;
+            UploadMusic.Click += UploadMusic_Click;
             // 
-            // pictureBox1
+            // AlbumCover
             // 
-            pictureBox1.Location = new Point(105, 190);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(149, 144);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            AlbumCover.Location = new Point(105, 190);
+            AlbumCover.Name = "AlbumCover";
+            AlbumCover.Size = new Size(149, 144);
+            AlbumCover.SizeMode = PictureBoxSizeMode.StretchImage;
+            AlbumCover.TabIndex = 2;
+            AlbumCover.TabStop = false;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(55, 38);
+            pictureBox2.Location = new Point(45, 12);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(101, 99);
+            pictureBox2.Size = new Size(148, 146);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(188, 75);
-            label1.Name = "label1";
-            label1.Size = new Size(122, 21);
-            label1.TabIndex = 4;
-            label1.Text = "Sweet As Sound";
-            // 
-            // button3
-            // 
-            button3.BackColor = SystemColors.GrayText;
-            button3.Location = new Point(284, 366);
-            button3.Name = "button3";
-            button3.Size = new Size(26, 23);
-            button3.TabIndex = 6;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -131,7 +118,6 @@
             label3.Size = new Size(77, 17);
             label3.TabIndex = 8;
             label3.Text = "Artist Name";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -144,65 +130,24 @@
             label4.TabIndex = 9;
             label4.Text = "Album Name";
             // 
-            // button2
-            // 
-            button2.BackColor = SystemColors.GrayText;
-            button2.Location = new Point(55, 366);
-            button2.Name = "button2";
-            button2.Size = new Size(26, 23);
-            button2.TabIndex = 10;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = false;
-            // 
             // progressBar1
             // 
             progressBar1.BackColor = SystemColors.Control;
             progressBar1.ForeColor = SystemColors.GradientInactiveCaption;
-            progressBar1.Location = new Point(55, 434);
+            progressBar1.Location = new Point(71, 434);
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(199, 12);
             progressBar1.TabIndex = 11;
-            // 
-            // button4
-            // 
-            button4.BackColor = SystemColors.GrayText;
-            button4.Location = new Point(55, 490);
-            button4.Name = "button4";
-            button4.Size = new Size(26, 23);
-            button4.TabIndex = 12;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            button5.BackColor = SystemColors.GrayText;
-            button5.Location = new Point(167, 490);
-            button5.Name = "button5";
-            button5.Size = new Size(26, 23);
-            button5.TabIndex = 13;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            button6.BackColor = SystemColors.GrayText;
-            button6.Location = new Point(284, 490);
-            button6.Name = "button6";
-            button6.Size = new Size(26, 23);
-            button6.TabIndex = 14;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.ForeColor = SystemColors.ControlLightLight;
-            label5.Location = new Point(260, 431);
+            label5.Location = new Point(276, 433);
             label5.Name = "label5";
-            label5.Size = new Size(72, 15);
+            label5.Size = new Size(34, 15);
             label5.TabIndex = 15;
-            label5.Text = "00:00 / 00:00";
-            label5.Click += label5_Click;
+            label5.Text = "00:00";
             // 
             // splitter1
             // 
@@ -212,55 +157,137 @@
             splitter1.TabIndex = 16;
             splitter1.TabStop = false;
             // 
+            // Volume
+            // 
+            Volume.Location = new Point(79, 537);
+            Volume.Name = "Volume";
+            Volume.Size = new Size(226, 45);
+            Volume.TabIndex = 17;
+            // 
+            // MediaPlayer
+            // 
+            MediaPlayer.Enabled = true;
+            MediaPlayer.Location = new Point(88, 74);
+            MediaPlayer.Name = "MediaPlayer";
+            MediaPlayer.OcxState = (AxHost.State)resources.GetObject("MediaPlayer.OcxState");
+            MediaPlayer.Size = new Size(75, 23);
+            MediaPlayer.TabIndex = 22;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(33, 524);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(51, 55);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 23;
+            pictureBox1.TabStop = false;
+            // 
+            // PauseBtn
+            // 
+            PauseBtn.BackColor = SystemColors.WindowText;
+            PauseBtn.BackgroundImage = (Image)resources.GetObject("PauseBtn.BackgroundImage");
+            PauseBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            PauseBtn.FlatAppearance.BorderSize = 0;
+            PauseBtn.FlatStyle = FlatStyle.Flat;
+            PauseBtn.Location = new Point(149, 490);
+            PauseBtn.Name = "PauseBtn";
+            PauseBtn.Size = new Size(16, 21);
+            PauseBtn.TabIndex = 24;
+            PauseBtn.UseVisualStyleBackColor = false;
+            PauseBtn.Click += PauseBtn_Click;
+            // 
+            // BackBtn
+            // 
+            BackBtn.BackgroundImage = (Image)resources.GetObject("BackBtn.BackgroundImage");
+            BackBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            BackBtn.FlatStyle = FlatStyle.Flat;
+            BackBtn.Location = new Point(71, 488);
+            BackBtn.Name = "BackBtn";
+            BackBtn.Size = new Size(26, 23);
+            BackBtn.TabIndex = 26;
+            BackBtn.UseVisualStyleBackColor = true;
+            BackBtn.Click += BackBtn_Click;
+            // 
+            // SkipBtn
+            // 
+            SkipBtn.BackgroundImage = (Image)resources.GetObject("SkipBtn.BackgroundImage");
+            SkipBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            SkipBtn.FlatStyle = FlatStyle.Flat;
+            SkipBtn.Location = new Point(279, 490);
+            SkipBtn.Name = "SkipBtn";
+            SkipBtn.Size = new Size(31, 23);
+            SkipBtn.TabIndex = 27;
+            SkipBtn.UseVisualStyleBackColor = true;
+            SkipBtn.Click += SkipBtn_Click;
+            // 
+            // PlayBtn
+            // 
+            PlayBtn.BackgroundImage = (Image)resources.GetObject("PlayBtn.BackgroundImage");
+            PlayBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            PlayBtn.FlatStyle = FlatStyle.Flat;
+            PlayBtn.Location = new Point(220, 490);
+            PlayBtn.Name = "PlayBtn";
+            PlayBtn.Size = new Size(23, 23);
+            PlayBtn.TabIndex = 28;
+            PlayBtn.UseVisualStyleBackColor = true;
+            PlayBtn.Click += PlayBtn_Click;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.WindowText;
             ClientSize = new Size(611, 614);
+            Controls.Add(PlayBtn);
+            Controls.Add(SkipBtn);
+            Controls.Add(BackBtn);
+            Controls.Add(PauseBtn);
+            Controls.Add(pictureBox1);
+            Controls.Add(Volume);
             Controls.Add(splitter1);
             Controls.Add(label5);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
             Controls.Add(progressBar1);
-            Controls.Add(button2);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(button3);
-            Controls.Add(label1);
             Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
-            Controls.Add(button1);
-            Controls.Add(listBox1);
+            Controls.Add(AlbumCover);
+            Controls.Add(UploadMusic);
+            Controls.Add(TrackList);
+            Controls.Add(MediaPlayer);
             Name = "Home";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
             FormClosing += Home_FormClosing;
-            Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AlbumCover).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Volume).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MediaPlayer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private ListBox listBox1;
-        private Button button1;
-        private PictureBox pictureBox1;
+        private ListBox TrackList;
+        private Button UploadMusic;
+        private PictureBox AlbumCover;
         private PictureBox pictureBox2;
-        private Label label1;
-        private Button button3;
         private Label label2;
         private Label label3;
         private Label label4;
-        private Button button2;
         private ProgressBar progressBar1;
-        private Button button4;
-        private Button button5;
-        private Button button6;
         private Label label5;
         private Splitter splitter1;
+        private TrackBar Volume;
+        private PictureBox PlayButton;
+        private AxWMPLib.AxWindowsMediaPlayer MediaPlayer;
+        private PictureBox pictureBox1;
+        private Button PauseBtn;
+        private Button SkipBtn;
+        private Button BackBtn;
+        private Button PlayBtn;
     }
 }

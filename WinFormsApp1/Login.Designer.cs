@@ -45,29 +45,31 @@
             // pictureBoxLogo
             // 
             pictureBoxLogo.Image = (Image)resources.GetObject("pictureBoxLogo.Image");
-            pictureBoxLogo.Location = new Point(135, 40);
+            pictureBoxLogo.Location = new Point(283, 142);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(101, 101);
+            pictureBoxLogo.Size = new Size(158, 155);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLogo.TabIndex = 0;
             pictureBoxLogo.TabStop = false;
             // 
             // labelLogo
             // 
             labelLogo.AutoSize = true;
-            labelLogo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelLogo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelLogo.ForeColor = SystemColors.ControlLightLight;
-            labelLogo.Location = new Point(253, 76);
+            labelLogo.Location = new Point(436, 200);
             labelLogo.Name = "labelLogo";
-            labelLogo.Size = new Size(146, 25);
+            labelLogo.Size = new Size(223, 32);
             labelLogo.TabIndex = 1;
-            labelLogo.Text = "Sweet As Sound";
+            labelLogo.Text = "Sanctuary of Sound";
+            labelLogo.Click += labelLogo_Click;
             // 
             // labelHeading
             // 
             labelHeading.AutoSize = true;
             labelHeading.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelHeading.ForeColor = SystemColors.ControlLightLight;
-            labelHeading.Location = new Point(190, 178);
+            labelHeading.Location = new Point(401, 312);
             labelHeading.Name = "labelHeading";
             labelHeading.Size = new Size(103, 40);
             labelHeading.TabIndex = 2;
@@ -79,7 +81,7 @@
             textBoxEmail.BorderStyle = BorderStyle.FixedSingle;
             textBoxEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxEmail.ForeColor = SystemColors.Window;
-            textBoxEmail.Location = new Point(100, 238);
+            textBoxEmail.Location = new Point(312, 368);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(316, 29);
             textBoxEmail.TabIndex = 3;
@@ -90,7 +92,7 @@
             textBoxPassword.BorderStyle = BorderStyle.FixedSingle;
             textBoxPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxPassword.ForeColor = SystemColors.Window;
-            textBoxPassword.Location = new Point(100, 273);
+            textBoxPassword.Location = new Point(312, 403);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(316, 29);
             textBoxPassword.TabIndex = 4;
@@ -100,7 +102,7 @@
             // 
             labelEmail.AutoSize = true;
             labelEmail.ForeColor = SystemColors.ControlLightLight;
-            labelEmail.Location = new Point(21, 246);
+            labelEmail.Location = new Point(233, 376);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(36, 15);
             labelEmail.TabIndex = 5;
@@ -110,7 +112,7 @@
             // 
             labelPassword.AutoSize = true;
             labelPassword.ForeColor = SystemColors.ControlLightLight;
-            labelPassword.Location = new Point(21, 281);
+            labelPassword.Location = new Point(233, 411);
             labelPassword.Name = "labelPassword";
             labelPassword.Size = new Size(57, 15);
             labelPassword.TabIndex = 6;
@@ -120,7 +122,7 @@
             // 
             linkLabelForgotPW.AutoSize = true;
             linkLabelForgotPW.LinkColor = Color.White;
-            linkLabelForgotPW.Location = new Point(316, 305);
+            linkLabelForgotPW.Location = new Point(528, 435);
             linkLabelForgotPW.Name = "linkLabelForgotPW";
             linkLabelForgotPW.Size = new Size(100, 15);
             linkLabelForgotPW.TabIndex = 7;
@@ -132,7 +134,7 @@
             // 
             buttonLogin.BackColor = SystemColors.GrayText;
             buttonLogin.ForeColor = SystemColors.ControlLightLight;
-            buttonLogin.Location = new Point(173, 346);
+            buttonLogin.Location = new Point(383, 479);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(139, 44);
             buttonLogin.TabIndex = 8;
@@ -144,7 +146,7 @@
             // 
             linkLabelRegisterPage.AutoSize = true;
             linkLabelRegisterPage.LinkColor = Color.White;
-            linkLabelRegisterPage.Location = new Point(135, 407);
+            linkLabelRegisterPage.Location = new Point(345, 540);
             linkLabelRegisterPage.Name = "linkLabelRegisterPage";
             linkLabelRegisterPage.Size = new Size(202, 15);
             linkLabelRegisterPage.TabIndex = 9;
@@ -157,7 +159,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(489, 450);
+            ClientSize = new Size(901, 771);
             Controls.Add(linkLabelRegisterPage);
             Controls.Add(buttonLogin);
             Controls.Add(linkLabelForgotPW);
@@ -169,6 +171,7 @@
             Controls.Add(labelLogo);
             Controls.Add(pictureBoxLogo);
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Log In";
             FormClosing += Login_FormClosing;
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();

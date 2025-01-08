@@ -7,8 +7,10 @@ using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1
 {
@@ -52,6 +54,11 @@ namespace WinFormsApp1
             else if (string.IsNullOrWhiteSpace(textBoxEmail.Text))
             {
                 MessageBox.Show("Please enter an Email.");
+                textBoxEmail.Focus();
+            }
+            else if (!Regex.Match(textBoxEmail.Text, "^((\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)\\s*[;]{0,1}\\s*)+$").Success)
+            {
+                MessageBox.Show("That is not a valid Email format. Try again");
                 textBoxEmail.Focus();
             }
             else if (string.IsNullOrWhiteSpace(textBoxPassword.Text))

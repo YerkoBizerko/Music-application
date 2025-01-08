@@ -74,8 +74,8 @@ namespace WinFormsApp1
             var context = new MusicDBContext();
 
             var validate = from e in context.Users
-                        where e.Email == Email && e.Password == Password
-                        select e;
+                           where e.Email == Email && e.Password == Password
+                           select e;
 
             if (validate.Count() != 0)
             {
@@ -120,6 +120,11 @@ namespace WinFormsApp1
             //        MessageBox.Show("Password is incorrect. Please try again.");
             //    }
             //}
+        }
+
+        private void labelLogo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
