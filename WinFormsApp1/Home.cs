@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Media;
 
 namespace WinFormsApp1
@@ -83,6 +84,14 @@ namespace WinFormsApp1
         private void VolumeTrackBar_Scroll(object sender, EventArgs e)
         {
             MediaPlayer.settings.volume = VolumeTrackBar.Value;
+        }
+
+        private void AccountSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var Settings = new Settings();
+            Settings.Show();
+            //Disabled due to the application exit function at the top of this code
+            //this.Close();
         }
     }
 }

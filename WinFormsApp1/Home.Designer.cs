@@ -32,11 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             TrackList = new ListBox();
             UploadMusic = new Button();
-            AlbumCover = new PictureBox();
             pictureBox2 = new PictureBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            SongTitle = new Label();
             ProgressBar = new ProgressBar();
             TrackTimer = new Label();
             splitter1 = new Splitter();
@@ -48,7 +45,7 @@
             SkipBtn = new Button();
             PlayBtn = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
-            ((System.ComponentModel.ISupportInitialize)AlbumCover).BeginInit();
+            AccountSettings = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VolumeTrackBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MediaPlayer).BeginInit();
@@ -76,61 +73,30 @@
             UploadMusic.Name = "UploadMusic";
             UploadMusic.Size = new Size(244, 46);
             UploadMusic.TabIndex = 1;
-            UploadMusic.Text = "Upload music";
+            UploadMusic.Text = "Upload music (MP3)";
             UploadMusic.UseVisualStyleBackColor = false;
             UploadMusic.Click += UploadMusic_Click;
-            // 
-            // AlbumCover
-            // 
-            AlbumCover.Location = new Point(105, 190);
-            AlbumCover.Name = "AlbumCover";
-            AlbumCover.Size = new Size(149, 144);
-            AlbumCover.SizeMode = PictureBoxSizeMode.StretchImage;
-            AlbumCover.TabIndex = 2;
-            AlbumCover.TabStop = false;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(45, 12);
+            pictureBox2.Location = new Point(71, 100);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(148, 146);
+            pictureBox2.Size = new Size(239, 251);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
             // 
-            // label2
+            // SongTitle
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(145, 353);
-            label2.Name = "label2";
-            label2.Size = new Size(76, 20);
-            label2.TabIndex = 7;
-            label2.Text = "Track Title";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(146, 372);
-            label3.Name = "label3";
-            label3.Size = new Size(77, 17);
-            label3.TabIndex = 8;
-            label3.Text = "Artist Name";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.ControlLightLight;
-            label4.Location = new Point(143, 388);
-            label4.Name = "label4";
-            label4.Size = new Size(84, 17);
-            label4.TabIndex = 9;
-            label4.Text = "Album Name";
+            SongTitle.AutoSize = true;
+            SongTitle.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SongTitle.ForeColor = SystemColors.ControlLightLight;
+            SongTitle.Location = new Point(103, 372);
+            SongTitle.Name = "SongTitle";
+            SongTitle.Size = new Size(174, 20);
+            SongTitle.TabIndex = 7;
+            SongTitle.Text = "Track Title (Future scope)";
             // 
             // ProgressBar
             // 
@@ -171,7 +137,7 @@
             // MediaPlayer
             // 
             MediaPlayer.Enabled = true;
-            MediaPlayer.Location = new Point(88, 74);
+            MediaPlayer.Location = new Point(152, 216);
             MediaPlayer.Name = "MediaPlayer";
             MediaPlayer.OcxState = (AxHost.State)resources.GetObject("MediaPlayer.OcxState");
             MediaPlayer.Size = new Size(75, 23);
@@ -242,12 +208,26 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
+            // AccountSettings
+            // 
+            AccountSettings.AutoSize = true;
+            AccountSettings.ForeColor = SystemColors.Window;
+            AccountSettings.LinkColor = Color.White;
+            AccountSettings.Location = new Point(502, 23);
+            AccountSettings.Name = "AccountSettings";
+            AccountSettings.Size = new Size(97, 15);
+            AccountSettings.TabIndex = 29;
+            AccountSettings.TabStop = true;
+            AccountSettings.Text = "Account Settings";
+            AccountSettings.LinkClicked += AccountSettings_LinkClicked;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.WindowText;
             ClientSize = new Size(611, 614);
+            Controls.Add(AccountSettings);
             Controls.Add(PlayBtn);
             Controls.Add(SkipBtn);
             Controls.Add(BackBtn);
@@ -257,11 +237,8 @@
             Controls.Add(splitter1);
             Controls.Add(TrackTimer);
             Controls.Add(ProgressBar);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(SongTitle);
             Controls.Add(pictureBox2);
-            Controls.Add(AlbumCover);
             Controls.Add(UploadMusic);
             Controls.Add(TrackList);
             Controls.Add(MediaPlayer);
@@ -269,7 +246,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
             FormClosing += Home_FormClosing;
-            ((System.ComponentModel.ISupportInitialize)AlbumCover).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)VolumeTrackBar).EndInit();
             ((System.ComponentModel.ISupportInitialize)MediaPlayer).EndInit();
@@ -282,11 +258,8 @@
 
         private ListBox TrackList;
         private Button UploadMusic;
-        private PictureBox AlbumCover;
         private PictureBox pictureBox2;
-        private Label label2;
-        private Label label3;
-        private Label label4;
+        private Label SongTitle;
         private ProgressBar ProgressBar;
         private Label TrackTimer;
         private Splitter splitter1;
@@ -299,5 +272,6 @@
         private Button BackBtn;
         private Button PlayBtn;
         private System.Windows.Forms.Timer timer1;
+        private LinkLabel AccountSettings;
     }
 }
