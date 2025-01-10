@@ -68,6 +68,7 @@
             // UploadMusic
             // 
             UploadMusic.BackColor = SystemColors.GrayText;
+            UploadMusic.Cursor = Cursors.Hand;
             UploadMusic.ForeColor = SystemColors.ControlLightLight;
             UploadMusic.Location = new Point(355, 502);
             UploadMusic.Name = "UploadMusic";
@@ -158,6 +159,7 @@
             PauseBtn.BackColor = SystemColors.WindowText;
             PauseBtn.BackgroundImage = (Image)resources.GetObject("PauseBtn.BackgroundImage");
             PauseBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            PauseBtn.Cursor = Cursors.Hand;
             PauseBtn.FlatAppearance.BorderSize = 0;
             PauseBtn.FlatStyle = FlatStyle.Flat;
             PauseBtn.Location = new Point(149, 490);
@@ -171,6 +173,7 @@
             // 
             BackBtn.BackgroundImage = (Image)resources.GetObject("BackBtn.BackgroundImage");
             BackBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            BackBtn.Cursor = Cursors.Hand;
             BackBtn.FlatStyle = FlatStyle.Flat;
             BackBtn.Location = new Point(71, 488);
             BackBtn.Name = "BackBtn";
@@ -183,6 +186,7 @@
             // 
             SkipBtn.BackgroundImage = (Image)resources.GetObject("SkipBtn.BackgroundImage");
             SkipBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            SkipBtn.Cursor = Cursors.Hand;
             SkipBtn.FlatStyle = FlatStyle.Flat;
             SkipBtn.Location = new Point(279, 490);
             SkipBtn.Name = "SkipBtn";
@@ -195,6 +199,7 @@
             // 
             PlayBtn.BackgroundImage = (Image)resources.GetObject("PlayBtn.BackgroundImage");
             PlayBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            PlayBtn.Cursor = Cursors.Hand;
             PlayBtn.FlatStyle = FlatStyle.Flat;
             PlayBtn.Location = new Point(220, 490);
             PlayBtn.Name = "PlayBtn";

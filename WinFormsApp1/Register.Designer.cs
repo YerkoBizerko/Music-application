@@ -163,10 +163,11 @@
             // buttonCreateAcc
             // 
             buttonCreateAcc.BackColor = SystemColors.GrayText;
+            buttonCreateAcc.Cursor = Cursors.Hand;
             buttonCreateAcc.ForeColor = SystemColors.ControlLightLight;
-            buttonCreateAcc.Location = new Point(369, 672);
+            buttonCreateAcc.Location = new Point(378, 679);
             buttonCreateAcc.Name = "buttonCreateAcc";
-            buttonCreateAcc.Size = new Size(148, 61);
+            buttonCreateAcc.Size = new Size(139, 44);
             buttonCreateAcc.TabIndex = 18;
             buttonCreateAcc.Text = "Create Account";
             buttonCreateAcc.UseVisualStyleBackColor = false;

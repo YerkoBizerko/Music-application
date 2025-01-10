@@ -19,7 +19,9 @@ namespace WinFormsApp1
 
         private void UpdateEmailBtn_Click(object sender, EventArgs e)
         {
-
+            var EmailUpdate = new EmailUpdate();
+            EmailUpdate.Show();
+            this.Close();
         }
 
         private void ChangePwdBtn_Click(object sender, EventArgs e)

@@ -39,6 +39,7 @@
             // UpdateEmailBtn
             // 
             UpdateEmailBtn.BackColor = SystemColors.GrayText;
+            UpdateEmailBtn.Cursor = Cursors.Hand;
             UpdateEmailBtn.ForeColor = SystemColors.ControlLightLight;
             UpdateEmailBtn.Location = new Point(176, 293);
             UpdateEmailBtn.Name = "UpdateEmailBtn";
@@ -51,6 +52,7 @@
             // ChangePwdBtn
             // 
             ChangePwdBtn.BackColor = SystemColors.GrayText;
+            ChangePwdBtn.Cursor = Cursors.Hand;
             ChangePwdBtn.ForeColor = SystemColors.ControlLightLight;
             ChangePwdBtn.Location = new Point(176, 370);
             ChangePwdBtn.Name = "ChangePwdBtn";
@@ -93,6 +95,7 @@
             Controls.Add(ChangePwdBtn);
             Controls.Add(UpdateEmailBtn);
             Name = "Settings";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Settings";
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ResumeLayout(false);

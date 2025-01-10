@@ -132,6 +132,7 @@
             // buttonLogin
             // 
             buttonLogin.BackColor = SystemColors.GrayText;
+            buttonLogin.Cursor = Cursors.Hand;
             buttonLogin.ForeColor = SystemColors.ControlLightLight;
             buttonLogin.Location = new Point(383, 479);
             buttonLogin.Name = "buttonLogin";
