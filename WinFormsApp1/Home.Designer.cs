@@ -107,6 +107,7 @@
             ProgressBar.Name = "ProgressBar";
             ProgressBar.Size = new Size(199, 12);
             ProgressBar.TabIndex = 11;
+            ProgressBar.MouseDown += ProgressBar_MouseDown;
             // 
             // TrackTimer
             // 

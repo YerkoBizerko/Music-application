@@ -93,5 +93,10 @@ namespace WinFormsApp1
             //Disabled due to the application exit function at the top of this code
             //this.Close();
         }
+
+        private void ProgressBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            MediaPlayer.Ctlcontrols.currentPosition = MediaPlayer.currentMedia.duration * e.X / ProgressBar.Width;
+        }
     }
 }

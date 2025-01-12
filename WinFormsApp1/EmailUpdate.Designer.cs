@@ -35,6 +35,7 @@
             EmailConfirmationCheckbox = new CheckBox();
             UpdateEmailConfirmBtn = new Button();
             pictureBoxLogo = new PictureBox();
+            CancelBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             SuspendLayout();
             // 
@@ -48,7 +49,6 @@
             OldEmailTextbox.PlaceholderText = "Enter previous email address";
             OldEmailTextbox.Size = new Size(223, 23);
             OldEmailTextbox.TabIndex = 0;
-            OldEmailTextbox.TabStop = false;
             // 
             // NewEmailTextBox2
             // 
@@ -76,7 +76,7 @@
             // 
             EmailConfirmationCheckbox.AutoSize = true;
             EmailConfirmationCheckbox.ForeColor = SystemColors.ControlLightLight;
-            EmailConfirmationCheckbox.Location = new Point(195, 393);
+            EmailConfirmationCheckbox.Location = new Point(196, 393);
             EmailConfirmationCheckbox.Name = "EmailConfirmationCheckbox";
             EmailConfirmationCheckbox.Size = new Size(235, 19);
             EmailConfirmationCheckbox.TabIndex = 5;
@@ -88,7 +88,7 @@
             UpdateEmailConfirmBtn.BackColor = SystemColors.GrayText;
             UpdateEmailConfirmBtn.Cursor = Cursors.Hand;
             UpdateEmailConfirmBtn.ForeColor = SystemColors.ControlLightLight;
-            UpdateEmailConfirmBtn.Location = new Point(239, 452);
+            UpdateEmailConfirmBtn.Location = new Point(312, 455);
             UpdateEmailConfirmBtn.Name = "UpdateEmailConfirmBtn";
             UpdateEmailConfirmBtn.Size = new Size(139, 44);
             UpdateEmailConfirmBtn.TabIndex = 6;
@@ -107,12 +107,26 @@
             pictureBoxLogo.TabIndex = 26;
             pictureBoxLogo.TabStop = false;
             // 
+            // CancelBtn
+            // 
+            CancelBtn.BackColor = SystemColors.GrayText;
+            CancelBtn.Cursor = Cursors.Hand;
+            CancelBtn.ForeColor = SystemColors.ControlLightLight;
+            CancelBtn.Location = new Point(167, 455);
+            CancelBtn.Name = "CancelBtn";
+            CancelBtn.Size = new Size(139, 44);
+            CancelBtn.TabIndex = 32;
+            CancelBtn.Text = "Cancel";
+            CancelBtn.UseVisualStyleBackColor = false;
+            CancelBtn.Click += CancelBtn_Click;
+            // 
             // EmailUpdate
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.WindowText;
             ClientSize = new Size(611, 614);
+            Controls.Add(CancelBtn);
             Controls.Add(pictureBoxLogo);
             Controls.Add(UpdateEmailConfirmBtn);
             Controls.Add(EmailConfirmationCheckbox);
@@ -135,5 +149,6 @@
         private CheckBox EmailConfirmationCheckbox;
         private Button UpdateEmailConfirmBtn;
         private PictureBox pictureBoxLogo;
+        private Button CancelBtn;
     }
 }

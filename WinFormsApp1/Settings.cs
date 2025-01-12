@@ -26,7 +26,9 @@ namespace WinFormsApp1
 
         private void ChangePwdBtn_Click(object sender, EventArgs e)
         {
-
+            var PwUpdate = new PwUpdate();
+            PwUpdate.Show();
+            this.Close();
         }
     }
 }

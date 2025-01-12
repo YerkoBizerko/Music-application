@@ -73,5 +73,10 @@ namespace WinFormsApp1
                 OldEmailTextbox.Focus();
             }
         }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
