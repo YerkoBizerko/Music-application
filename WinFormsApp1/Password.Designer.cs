@@ -35,6 +35,7 @@
             textBoxPWreset = new TextBox();
             buttonPWreset = new Button();
             pictureBoxLogo = new PictureBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             labelPassword.Size = new Size(261, 40);
             labelPassword.TabIndex = 0;
             labelPassword.Text = "Forgot password?";
+            labelPassword.Click += labelPassword_Click;
             // 
             // labelPWtext
             // 
@@ -105,12 +107,24 @@
             pictureBoxLogo.TabIndex = 25;
             pictureBoxLogo.TabStop = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(341, 311);
+            label1.Name = "label1";
+            label1.Size = new Size(216, 40);
+            label1.TabIndex = 26;
+            label1.Text = "(Future scope)";
+            // 
             // Password
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlText;
             ClientSize = new Size(901, 771);
+            Controls.Add(label1);
             Controls.Add(pictureBoxLogo);
             Controls.Add(buttonPWreset);
             Controls.Add(textBoxPWreset);
@@ -133,5 +147,6 @@
         private TextBox textBoxPWreset;
         private Button buttonPWreset;
         private PictureBox pictureBoxLogo;
+        private Label label1;
     }
 }

@@ -26,10 +26,15 @@ namespace WinFormsApp1
 
         private void buttonPWreset_Click(object sender, EventArgs e)
         {
-            if (textBoxPWreset.Text =="")
+            if (textBoxPWreset.Text == "")
             {
                 MessageBox.Show("Please enter your email address");
             }
+        }
+
+        private void labelPassword_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

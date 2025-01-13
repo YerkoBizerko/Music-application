@@ -98,5 +98,10 @@ namespace WinFormsApp1
         {
             MediaPlayer.Ctlcontrols.currentPosition = MediaPlayer.currentMedia.duration * e.X / ProgressBar.Width;
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

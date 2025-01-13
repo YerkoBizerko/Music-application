@@ -112,7 +112,7 @@ namespace WinFormsApp1
                 //var Login = new Login();
                 //Login.Show();
                 //this.Close();
-  
+
             }
         }
 
@@ -169,6 +169,11 @@ namespace WinFormsApp1
         private void buttonNewCaptcha_Click(object sender, EventArgs e)
         {
             generateCaptcha();
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+                this.ActiveControl = textBoxFirstName;    
         }
     }
 }

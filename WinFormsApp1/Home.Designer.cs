@@ -46,6 +46,7 @@
             PlayBtn = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             AccountSettings = new LinkLabel();
+            linkLabel1 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VolumeTrackBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MediaPlayer).BeginInit();
@@ -219,7 +220,7 @@
             AccountSettings.AutoSize = true;
             AccountSettings.ForeColor = SystemColors.Window;
             AccountSettings.LinkColor = Color.White;
-            AccountSettings.Location = new Point(502, 23);
+            AccountSettings.Location = new Point(438, 23);
             AccountSettings.Name = "AccountSettings";
             AccountSettings.Size = new Size(97, 15);
             AccountSettings.TabIndex = 29;
@@ -227,12 +228,25 @@
             AccountSettings.Text = "Account Settings";
             AccountSettings.LinkClicked += AccountSettings_LinkClicked;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.White;
+            linkLabel1.Location = new Point(546, 23);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(48, 15);
+            linkLabel1.TabIndex = 30;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Log out";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.WindowText;
             ClientSize = new Size(611, 614);
+            Controls.Add(linkLabel1);
             Controls.Add(AccountSettings);
             Controls.Add(PlayBtn);
             Controls.Add(SkipBtn);
@@ -279,5 +293,6 @@
         private Button PlayBtn;
         private System.Windows.Forms.Timer timer1;
         private LinkLabel AccountSettings;
+        private LinkLabel linkLabel1;
     }
 }

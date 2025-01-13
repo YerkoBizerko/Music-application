@@ -48,7 +48,7 @@
             OldEmailTextbox.Name = "OldEmailTextbox";
             OldEmailTextbox.PlaceholderText = "Enter previous email address";
             OldEmailTextbox.Size = new Size(223, 23);
-            OldEmailTextbox.TabIndex = 0;
+            OldEmailTextbox.TabIndex = 1;
             // 
             // NewEmailTextBox2
             // 
@@ -59,7 +59,7 @@
             NewEmailTextBox2.Name = "NewEmailTextBox2";
             NewEmailTextBox2.PlaceholderText = "Enter new email address";
             NewEmailTextBox2.Size = new Size(223, 23);
-            NewEmailTextBox2.TabIndex = 1;
+            NewEmailTextBox2.TabIndex = 2;
             // 
             // UpdateEmailLabel
             // 
@@ -115,7 +115,7 @@
             CancelBtn.Location = new Point(167, 455);
             CancelBtn.Name = "CancelBtn";
             CancelBtn.Size = new Size(139, 44);
-            CancelBtn.TabIndex = 32;
+            CancelBtn.TabIndex = 0;
             CancelBtn.Text = "Cancel";
             CancelBtn.UseVisualStyleBackColor = false;
             CancelBtn.Click += CancelBtn_Click;

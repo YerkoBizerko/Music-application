@@ -96,6 +96,7 @@
             NewPwTextBox2.PlaceholderText = "Enter new password";
             NewPwTextBox2.Size = new Size(223, 23);
             NewPwTextBox2.TabIndex = 29;
+            NewPwTextBox2.UseSystemPasswordChar = true;
             // 
             // EmailTextbox
             // 
@@ -118,6 +119,7 @@
             OldPwTextBox.PlaceholderText = "Enter current password";
             OldPwTextBox.Size = new Size(223, 23);
             OldPwTextBox.TabIndex = 28;
+            OldPwTextBox.UseSystemPasswordChar = true;
             // 
             // CancelBtn
             // 
@@ -127,7 +129,7 @@
             CancelBtn.Location = new Point(166, 454);
             CancelBtn.Name = "CancelBtn";
             CancelBtn.Size = new Size(139, 44);
-            CancelBtn.TabIndex = 33;
+            CancelBtn.TabIndex = 0;
             CancelBtn.Text = "Cancel";
             CancelBtn.UseVisualStyleBackColor = false;
             CancelBtn.Click += CancelBtn_Click;

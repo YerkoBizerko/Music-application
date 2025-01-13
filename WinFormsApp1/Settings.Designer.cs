@@ -33,6 +33,7 @@
             ChangePwdBtn = new Button();
             label1 = new Label();
             pictureBoxLogo = new PictureBox();
+            HomeBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             SuspendLayout();
             // 
@@ -84,12 +85,26 @@
             pictureBoxLogo.TabIndex = 25;
             pictureBoxLogo.TabStop = false;
             // 
+            // HomeBtn
+            // 
+            HomeBtn.BackColor = SystemColors.GrayText;
+            HomeBtn.Cursor = Cursors.Hand;
+            HomeBtn.ForeColor = SystemColors.ControlLightLight;
+            HomeBtn.Location = new Point(176, 445);
+            HomeBtn.Name = "HomeBtn";
+            HomeBtn.Size = new Size(259, 37);
+            HomeBtn.TabIndex = 26;
+            HomeBtn.Text = "Back to home";
+            HomeBtn.UseVisualStyleBackColor = false;
+            HomeBtn.Click += button1_Click;
+            // 
             // Settings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.WindowText;
             ClientSize = new Size(611, 614);
+            Controls.Add(HomeBtn);
             Controls.Add(pictureBoxLogo);
             Controls.Add(label1);
             Controls.Add(ChangePwdBtn);
@@ -108,5 +123,6 @@
         private Button ChangePwdBtn;
         private Label label1;
         private PictureBox pictureBoxLogo;
+        private Button HomeBtn;
     }
 }

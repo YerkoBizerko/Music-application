@@ -153,10 +153,10 @@
             // 
             checkBoxPolicy.AutoSize = true;
             checkBoxPolicy.ForeColor = SystemColors.ControlLightLight;
-            checkBoxPolicy.Location = new Point(250, 633);
+            checkBoxPolicy.Location = new Point(361, 633);
             checkBoxPolicy.Name = "checkBoxPolicy";
             checkBoxPolicy.Size = new Size(171, 19);
-            checkBoxPolicy.TabIndex = 17;
+            checkBoxPolicy.TabIndex = 24;
             checkBoxPolicy.Text = "I agree to the privacy policy";
             checkBoxPolicy.UseVisualStyleBackColor = true;
             // 
@@ -300,6 +300,7 @@
             Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Register";
+            Load += Register_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
