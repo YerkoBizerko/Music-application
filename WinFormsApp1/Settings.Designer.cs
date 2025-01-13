@@ -34,6 +34,7 @@
             label1 = new Label();
             pictureBoxLogo = new PictureBox();
             HomeBtn = new Button();
+            DeleteAccBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             SuspendLayout();
             // 
@@ -90,7 +91,7 @@
             HomeBtn.BackColor = SystemColors.GrayText;
             HomeBtn.Cursor = Cursors.Hand;
             HomeBtn.ForeColor = SystemColors.ControlLightLight;
-            HomeBtn.Location = new Point(176, 445);
+            HomeBtn.Location = new Point(176, 513);
             HomeBtn.Name = "HomeBtn";
             HomeBtn.Size = new Size(259, 37);
             HomeBtn.TabIndex = 26;
@@ -98,12 +99,25 @@
             HomeBtn.UseVisualStyleBackColor = false;
             HomeBtn.Click += button1_Click;
             // 
+            // DeleteAccBtn
+            // 
+            DeleteAccBtn.BackColor = SystemColors.GrayText;
+            DeleteAccBtn.ForeColor = SystemColors.ControlLightLight;
+            DeleteAccBtn.Location = new Point(176, 442);
+            DeleteAccBtn.Name = "DeleteAccBtn";
+            DeleteAccBtn.Size = new Size(259, 37);
+            DeleteAccBtn.TabIndex = 27;
+            DeleteAccBtn.Text = "Deactivate Account";
+            DeleteAccBtn.UseVisualStyleBackColor = false;
+            DeleteAccBtn.Click += DeleteAccBtn_Click;
+            // 
             // Settings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.WindowText;
             ClientSize = new Size(611, 614);
+            Controls.Add(DeleteAccBtn);
             Controls.Add(HomeBtn);
             Controls.Add(pictureBoxLogo);
             Controls.Add(label1);
@@ -124,5 +138,6 @@
         private Label label1;
         private PictureBox pictureBoxLogo;
         private Button HomeBtn;
+        private Button DeleteAccBtn;
     }
 }

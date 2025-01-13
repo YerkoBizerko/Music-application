@@ -35,5 +35,12 @@ namespace WinFormsApp1
         {
             this.Close();
         }
+
+        private void DeleteAccBtn_Click(object sender, EventArgs e)
+        {
+            var DeleteAcc = new DeleteAcc();
+            DeleteAcc.Show();
+            this.Close();
+        }
     }
 }
