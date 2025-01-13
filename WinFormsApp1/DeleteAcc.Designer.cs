@@ -47,7 +47,7 @@
             CancelBtn.Location = new Point(165, 454);
             CancelBtn.Name = "CancelBtn";
             CancelBtn.Size = new Size(139, 44);
-            CancelBtn.TabIndex = 33;
+            CancelBtn.TabIndex = 0;
             CancelBtn.Text = "Cancel";
             CancelBtn.UseVisualStyleBackColor = false;
             CancelBtn.Click += CancelBtn_Click;
@@ -61,7 +61,7 @@
             PwTextBox.Name = "PwTextBox";
             PwTextBox.PlaceholderText = "Enter password";
             PwTextBox.Size = new Size(223, 23);
-            PwTextBox.TabIndex = 35;
+            PwTextBox.TabIndex = 2;
             PwTextBox.UseSystemPasswordChar = true;
             // 
             // pictureBoxLogo
@@ -83,7 +83,7 @@
             DeactivateConfirmBtn.Location = new Point(310, 454);
             DeactivateConfirmBtn.Name = "DeactivateConfirmBtn";
             DeactivateConfirmBtn.Size = new Size(139, 44);
-            DeactivateConfirmBtn.TabIndex = 39;
+            DeactivateConfirmBtn.TabIndex = 4;
             DeactivateConfirmBtn.Text = "Confirm";
             DeactivateConfirmBtn.UseVisualStyleBackColor = false;
             DeactivateConfirmBtn.Click += UpdatePwConfirmBtn_Click;
@@ -95,7 +95,7 @@
             DeactivateCheckbox.Location = new Point(124, 389);
             DeactivateCheckbox.Name = "DeactivateCheckbox";
             DeactivateCheckbox.Size = new Size(388, 19);
-            DeactivateCheckbox.TabIndex = 38;
+            DeactivateCheckbox.TabIndex = 3;
             DeactivateCheckbox.Text = "I would like to deactivate my account, i understand this is irreversible";
             DeactivateCheckbox.UseVisualStyleBackColor = true;
             // 
@@ -119,7 +119,7 @@
             EmailTextbox.Name = "EmailTextbox";
             EmailTextbox.PlaceholderText = "Enter email address";
             EmailTextbox.Size = new Size(223, 23);
-            EmailTextbox.TabIndex = 34;
+            EmailTextbox.TabIndex = 1;
             // 
             // DeleteAcc
             // 
