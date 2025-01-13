@@ -32,9 +32,9 @@
             CancelBtn = new Button();
             PwTextBox = new TextBox();
             pictureBoxLogo = new PictureBox();
-            UpdatePwConfirmBtn = new Button();
-            PwConfirmationCheckbox = new CheckBox();
-            UpdatePwLabel = new Label();
+            DeactivateConfirmBtn = new Button();
+            DeactivateCheckbox = new CheckBox();
+            DeactivateLabel = new Label();
             EmailTextbox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             SuspendLayout();
@@ -50,6 +50,7 @@
             CancelBtn.TabIndex = 33;
             CancelBtn.Text = "Cancel";
             CancelBtn.UseVisualStyleBackColor = false;
+            CancelBtn.Click += CancelBtn_Click;
             // 
             // PwTextBox
             // 
@@ -74,39 +75,40 @@
             pictureBoxLogo.TabIndex = 40;
             pictureBoxLogo.TabStop = false;
             // 
-            // UpdatePwConfirmBtn
+            // DeactivateConfirmBtn
             // 
-            UpdatePwConfirmBtn.BackColor = SystemColors.GrayText;
-            UpdatePwConfirmBtn.Cursor = Cursors.Hand;
-            UpdatePwConfirmBtn.ForeColor = SystemColors.ControlLightLight;
-            UpdatePwConfirmBtn.Location = new Point(310, 454);
-            UpdatePwConfirmBtn.Name = "UpdatePwConfirmBtn";
-            UpdatePwConfirmBtn.Size = new Size(139, 44);
-            UpdatePwConfirmBtn.TabIndex = 39;
-            UpdatePwConfirmBtn.Text = "Confirm";
-            UpdatePwConfirmBtn.UseVisualStyleBackColor = false;
+            DeactivateConfirmBtn.BackColor = SystemColors.GrayText;
+            DeactivateConfirmBtn.Cursor = Cursors.Hand;
+            DeactivateConfirmBtn.ForeColor = SystemColors.ControlLightLight;
+            DeactivateConfirmBtn.Location = new Point(310, 454);
+            DeactivateConfirmBtn.Name = "DeactivateConfirmBtn";
+            DeactivateConfirmBtn.Size = new Size(139, 44);
+            DeactivateConfirmBtn.TabIndex = 39;
+            DeactivateConfirmBtn.Text = "Confirm";
+            DeactivateConfirmBtn.UseVisualStyleBackColor = false;
+            DeactivateConfirmBtn.Click += UpdatePwConfirmBtn_Click;
             // 
-            // PwConfirmationCheckbox
+            // DeactivateCheckbox
             // 
-            PwConfirmationCheckbox.AutoSize = true;
-            PwConfirmationCheckbox.ForeColor = SystemColors.ControlLightLight;
-            PwConfirmationCheckbox.Location = new Point(124, 389);
-            PwConfirmationCheckbox.Name = "PwConfirmationCheckbox";
-            PwConfirmationCheckbox.Size = new Size(388, 19);
-            PwConfirmationCheckbox.TabIndex = 38;
-            PwConfirmationCheckbox.Text = "I would like to deactivate my account, i understand this is irreversible";
-            PwConfirmationCheckbox.UseVisualStyleBackColor = true;
+            DeactivateCheckbox.AutoSize = true;
+            DeactivateCheckbox.ForeColor = SystemColors.ControlLightLight;
+            DeactivateCheckbox.Location = new Point(124, 389);
+            DeactivateCheckbox.Name = "DeactivateCheckbox";
+            DeactivateCheckbox.Size = new Size(388, 19);
+            DeactivateCheckbox.TabIndex = 38;
+            DeactivateCheckbox.Text = "I would like to deactivate my account, i understand this is irreversible";
+            DeactivateCheckbox.UseVisualStyleBackColor = true;
             // 
-            // UpdatePwLabel
+            // DeactivateLabel
             // 
-            UpdatePwLabel.AutoSize = true;
-            UpdatePwLabel.Font = new Font("Segoe UI", 21F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UpdatePwLabel.ForeColor = SystemColors.Window;
-            UpdatePwLabel.Location = new Point(176, 210);
-            UpdatePwLabel.Name = "UpdatePwLabel";
-            UpdatePwLabel.Size = new Size(272, 38);
-            UpdatePwLabel.TabIndex = 36;
-            UpdatePwLabel.Text = "Deactivate Account";
+            DeactivateLabel.AutoSize = true;
+            DeactivateLabel.Font = new Font("Segoe UI", 21F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DeactivateLabel.ForeColor = SystemColors.Window;
+            DeactivateLabel.Location = new Point(176, 210);
+            DeactivateLabel.Name = "DeactivateLabel";
+            DeactivateLabel.Size = new Size(272, 38);
+            DeactivateLabel.TabIndex = 36;
+            DeactivateLabel.Text = "Deactivate Account";
             // 
             // EmailTextbox
             // 
@@ -128,11 +130,12 @@
             Controls.Add(CancelBtn);
             Controls.Add(PwTextBox);
             Controls.Add(pictureBoxLogo);
-            Controls.Add(UpdatePwConfirmBtn);
-            Controls.Add(PwConfirmationCheckbox);
-            Controls.Add(UpdatePwLabel);
+            Controls.Add(DeactivateConfirmBtn);
+            Controls.Add(DeactivateCheckbox);
+            Controls.Add(DeactivateLabel);
             Controls.Add(EmailTextbox);
             Name = "DeleteAcc";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Deactivate Account";
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ResumeLayout(false);
@@ -144,9 +147,9 @@
         private Button CancelBtn;
         private TextBox PwTextBox;
         private PictureBox pictureBoxLogo;
-        private Button UpdatePwConfirmBtn;
-        private CheckBox PwConfirmationCheckbox;
-        private Label UpdatePwLabel;
+        private Button DeactivateConfirmBtn;
+        private CheckBox DeactivateCheckbox;
+        private Label DeactivateLabel;
         private TextBox EmailTextbox;
     }
 }
