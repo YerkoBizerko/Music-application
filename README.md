@@ -19,7 +19,9 @@ Over time, these business rules were expanded upon; paving the way for more UI/U
 I built this site using the integrated design features of Winforms to an almost (see Future Scope below) fully functional Media Player as a way to display, test and improve my skillset with C# programming, SQL and the .NET framework.
 
 I utilised ***.NET*** to build the overall skeleton of every component/page. EFcore for .NET was used for object-relational mapping while integrating the database; LINQ query was used to access and manipulate the data population. 
+
 ***C#*** programming logic was integrated to provide function to these pages, including the security of captcha and input validations.
+
 ***SQL*** allowed me to create the databases and implement them directly into the application to store user data. It also allowed me to create and manage admin accounts for the hypothetical scenario.
 
 # 🌟 **Plans for Future Scope**
