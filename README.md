@@ -29,15 +29,13 @@ I utilised ***.NET*** to build the overall skeleton of every component/page. EFc
 - Album cover art displayed based on the currently playing track
 - Uploaded songs remain permanently uploaded per user
 - Song titles display based on the currently playing track
-- Fully functional forgotten password section
+- Functional forgotten password section
+- Database hosting for functional app deployment. Deployed version currently does not opperate without a dedicated server/database host
 - Allow users to delete their account (COMPLETED)
 
 # ✍️ **Relevant documentation**
 1. Link to original Draw.io wireframe NOTE: These designs were to get the initial design rolling, the contents of the launched version are mostly trial & error. Also used to demonstrate experience with wireframe production.
    
   ![Sanctuary of Sound Wireframe](https://github.com/user-attachments/assets/f70185b0-7166-44b2-8bf3-e3ff8ad3ad9d)
-
-
-3. Link to download and use Sanctuary of Sound:
 
    
