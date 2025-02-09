@@ -145,8 +145,9 @@
             textBoxPolicy.Location = new Point(342, 550);
             textBoxPolicy.Multiline = true;
             textBoxPolicy.Name = "textBoxPolicy";
-            textBoxPolicy.Size = new Size(275, 123);
+            textBoxPolicy.Size = new Size(275, 77);
             textBoxPolicy.TabIndex = 16;
+            textBoxPolicy.TabStop = false;
             textBoxPolicy.Text = "Our privacy policy is based upon the values set by the Standards Association's Model Code for the Protection of Personal Information and Personal Information Protection and Documents Act.";
             // 
             // checkBoxPolicy
@@ -156,7 +157,7 @@
             checkBoxPolicy.Location = new Point(361, 633);
             checkBoxPolicy.Name = "checkBoxPolicy";
             checkBoxPolicy.Size = new Size(171, 19);
-            checkBoxPolicy.TabIndex = 24;
+            checkBoxPolicy.TabIndex = 12;
             checkBoxPolicy.Text = "I agree to the privacy policy";
             checkBoxPolicy.UseVisualStyleBackColor = true;
             // 
@@ -168,7 +169,7 @@
             buttonCreateAcc.Location = new Point(378, 679);
             buttonCreateAcc.Name = "buttonCreateAcc";
             buttonCreateAcc.Size = new Size(139, 44);
-            buttonCreateAcc.TabIndex = 18;
+            buttonCreateAcc.TabIndex = 13;
             buttonCreateAcc.Text = "Create Account";
             buttonCreateAcc.UseVisualStyleBackColor = false;
             buttonCreateAcc.Click += buttonCreateAcc_Click;
@@ -180,7 +181,7 @@
             linkLabelLoginPage.Location = new Point(360, 743);
             linkLabelLoginPage.Name = "linkLabelLoginPage";
             linkLabelLoginPage.Size = new Size(166, 15);
-            linkLabelLoginPage.TabIndex = 19;
+            linkLabelLoginPage.TabIndex = 14;
             linkLabelLoginPage.TabStop = true;
             linkLabelLoginPage.Text = "Already registered? Login here";
             linkLabelLoginPage.LinkClicked += linkLabelLoginPage_LinkClicked;
@@ -194,7 +195,7 @@
             textBoxLastName.Location = new Point(320, 354);
             textBoxLastName.Name = "textBoxLastName";
             textBoxLastName.Size = new Size(297, 27);
-            textBoxLastName.TabIndex = 20;
+            textBoxLastName.TabIndex = 8;
             // 
             // textBoxEmail
             // 
@@ -205,7 +206,7 @@
             textBoxEmail.Location = new Point(320, 400);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(297, 27);
-            textBoxEmail.TabIndex = 21;
+            textBoxEmail.TabIndex = 9;
             // 
             // textBoxPassword
             // 
@@ -216,7 +217,7 @@
             textBoxPassword.Location = new Point(320, 445);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(297, 27);
-            textBoxPassword.TabIndex = 22;
+            textBoxPassword.TabIndex = 10;
             textBoxPassword.UseSystemPasswordChar = true;
             // 
             // textBoxCaptcha
@@ -228,7 +229,7 @@
             textBoxCaptcha.Location = new Point(478, 502);
             textBoxCaptcha.Name = "textBoxCaptcha";
             textBoxCaptcha.Size = new Size(139, 27);
-            textBoxCaptcha.TabIndex = 23;
+            textBoxCaptcha.TabIndex = 11;
             // 
             // pictureBoxLogo
             // 
@@ -267,6 +268,7 @@
             buttonNewCaptcha.Name = "buttonNewCaptcha";
             buttonNewCaptcha.Size = new Size(43, 21);
             buttonNewCaptcha.TabIndex = 27;
+            buttonNewCaptcha.TabStop = false;
             buttonNewCaptcha.Text = "Reset";
             buttonNewCaptcha.UseVisualStyleBackColor = true;
             buttonNewCaptcha.Click += buttonNewCaptcha_Click;
