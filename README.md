@@ -30,8 +30,14 @@ I utilised ***.NET*** to build the overall skeleton of every component/page. EFc
 - Uploaded songs remain permanently uploaded per user
 - Song titles display based on the currently playing track
 - Functional forgotten password section
-- Database hosting for functional app deployment. Deployed version currently does not opperate without a dedicated server/database host
+- Database hosting for functional app deployment. Deployed version currently does not operate without a dedicated server/database host and api gateway
 - Allow users to delete their account (COMPLETED)
+
+# 📖 **Challenges and/or learnings**
+
+The biggest challenge i faced was during the deployment phase of this project, i found difficulty in finding a way to allow for remote installation while retaining the core feature of this application (Database integration). During my search for a solution, i learnt a plethora of useful information; including server & database hosting and API integration. This is a hurdle i have been unable to overcome as of yet.
+
+Another challenge i found was the integration of legacy features that would allow my media player to operate as intended, as the documentation available was minimal and required further research. As a student developer you are often pushed to learn and use the latest technologies, this project has taught me that sometimes you can infact "learn from the old dog with old tricks". I'm humbled by my tenacity in this situation, which allowed me to overcome this obstacle.
 
 # ✍️ **Relevant documentation**
 1. Link to original Draw.io wireframe NOTE: These designs were to get the initial design rolling, the contents of the launched version are mostly trial & error. Also used to demonstrate experience with wireframe production.
